@@ -1,59 +1,61 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="border-b border-gray-100">
+    <main className="min-h-screen bg-slate-950 text-white">
+      {/* Navbar */}
+      <nav className="border-b border-white/10 bg-slate-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <div className="text-2xl font-bold tracking-tight">
-            StudyPilot
+          <Link href="/" className="text-2xl font-bold">
+            🧠 Brain-Bank
+          </Link>
+
+          <div className="flex items-center gap-4">
+            <Link
+              href="/dashboard"
+              className="rounded-lg px-4 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white"
+            >
+              Dashboard
+            </Link>
+
+            <Link
+              href="/dashboard"
+              className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold transition hover:bg-blue-500"
+            >
+              Get Started
+            </Link>
           </div>
-
-          <div className="hidden gap-8 text-sm text-gray-600 md:flex">
-            <a href="#features" className="hover:text-black">
-              Features
-            </a>
-
-            <a href="#how-it-works" className="hover:text-black">
-              How it works
-            </a>
-
-            <a href="#about" className="hover:text-black">
-              About
-            </a>
-          </div>
-
-          <button className="rounded-xl bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800">
-            Get Started
-          </button>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-24 text-center">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-6 inline-flex rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-600">
-            Your AI-powered learning companion
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 py-24 text-center">
+          <div className="mx-auto mb-6 inline-flex rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
+            🚀 Your AI-powered learning companion
           </div>
 
-          <h1 className="text-5xl font-bold tracking-tight text-gray-950 md:text-7xl">
-            Study smarter.
-            <br />
-            <span className="text-gray-500">Learn better.</span>
+          <h1 className="mx-auto max-w-4xl text-5xl font-extrabold tracking-tight sm:text-6xl">
+            Learn smarter with{" "}
+            <span className="text-blue-400">Brain-Bank</span>
           </h1>
 
-          <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-gray-600">
-            StudyPilot helps you understand your syllabus, create study
-            material, practice questions, and track your learning with AI.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+            Your personal study platform for AI-powered notes, courses,
+            practice, flashcards, study planning, and progress tracking.
           </p>
 
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-            <button className="rounded-xl bg-black px-7 py-3.5 font-medium text-white hover:bg-gray-800">
-              Start Learning
-            </button>
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/dashboard"
+              className="rounded-xl bg-blue-600 px-7 py-4 font-semibold transition hover:bg-blue-500"
+            >
+              Open Dashboard →
+            </Link>
 
             <a
               href="#features"
-              className="rounded-xl border border-gray-200 px-7 py-3.5 font-medium text-gray-800 hover:bg-gray-50"
+              className="rounded-xl border border-white/10 px-7 py-4 font-semibold text-slate-300 transition hover:bg-white/5"
             >
               Explore Features
             </a>
@@ -62,118 +64,97 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="border-y border-gray-100 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-12 max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">
-              Features
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-              Everything you need to learn
-            </h2>
-
-            <p className="mt-4 text-gray-600">
-              One platform for understanding, practicing, planning, and
-              improving.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Feature
-              icon="🤖"
-              title="AI Tutor"
-              description="Ask questions and get explanations tailored to your learning level."
-            />
-
-            <Feature
-              icon="📚"
-              title="Smart Notes"
-              description="Turn topics into structured, easy-to-understand study notes."
-            />
-
-            <Feature
-              icon="📝"
-              title="Practice"
-              description="Generate MCQs and practice questions for your subjects."
-            />
-
-            <Feature
-              icon="🧠"
-              title="Flashcards"
-              description="Review important concepts with quick interactive flashcards."
-            />
-
-            <Feature
-              icon="📅"
-              title="Study Planner"
-              description="Create a study plan based on your subjects and available time."
-            />
-
-            <Feature
-              icon="📈"
-              title="Progress Tracking"
-              description="See your learning progress and identify topics that need more work."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">
-            How it works
+      <section id="features" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-400">
+            Everything you need
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-            Your learning journey
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            One place for your entire study journey
           </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+            Brain-Bank brings your learning tools together in one simple
+            platform.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
-          <Step
-            number="01"
-            title="Choose your subject"
-            description="Select your course, semester, and subject."
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <Feature
+            icon="📚"
+            title="My Courses"
+            description="Organize your subjects, courses, and learning materials."
           />
 
-          <Step
-            number="02"
-            title="Learn with AI"
-            description="Study notes, explanations, questions, and flashcards are generated around your topics."
+          <Feature
+            icon="🤖"
+            title="AI Tutor"
+            description="Ask questions and get help while studying."
           />
 
-          <Step
-            number="03"
-            title="Track your progress"
-            description="Practice regularly and monitor what you have mastered."
+          <Feature
+            icon="📝"
+            title="AI Notes"
+            description="Create clear and useful study notes faster."
+          />
+
+          <Feature
+            icon="🧠"
+            title="Flashcards"
+            description="Remember important concepts with active recall."
+          />
+
+          <Feature
+            icon="🎯"
+            title="Practice"
+            description="Test your knowledge with practice questions."
+          />
+
+          <Feature
+            icon="📅"
+            title="Study Planner"
+            description="Plan your study sessions and stay consistent."
+          />
+
+          <Feature
+            icon="📊"
+            title="Progress"
+            description="Track your learning progress and achievements."
+          />
+
+          <Feature
+            icon="⚡"
+            title="Smart Learning"
+            description="Use AI-powered tools to make studying more efficient."
           />
         </div>
       </section>
 
       {/* CTA */}
-      <section
-        id="about"
-        className="bg-black px-6 py-24 text-center text-white"
-      >
-        <h2 className="text-3xl font-bold md:text-5xl">
-          Your studies. Your AI copilot.
-        </h2>
+      <section className="mx-auto max-w-5xl px-6 py-20">
+        <div className="rounded-3xl border border-blue-400/20 bg-blue-500/10 p-10 text-center sm:p-14">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Ready to start learning?
+          </h2>
 
-        <p className="mx-auto mt-5 max-w-xl text-gray-400">
-          StudyPilot is being built to make learning more organized,
-          personalized, and effective.
-        </p>
+          <p className="mx-auto mt-4 max-w-xl text-slate-400">
+            Open your Brain-Bank dashboard and start building your learning
+            system.
+          </p>
 
-        <button className="mt-8 rounded-xl bg-white px-7 py-3.5 font-medium text-black hover:bg-gray-200">
-          Start with StudyPilot
-        </button>
+          <Link
+            href="/dashboard"
+            className="mt-8 inline-block rounded-xl bg-blue-600 px-7 py-4 font-semibold transition hover:bg-blue-500"
+          >
+            Go to Brain-Bank →
+          </Link>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 bg-black px-6 py-8 text-center text-sm text-gray-500">
-        © 2026 StudyPilot. Built for learners.
+      <footer className="border-t border-white/10 py-8 text-center text-sm text-slate-500">
+        © {new Date().getFullYear()} Brain-Bank. Learn. Practice. Grow.
       </footer>
     </main>
   );
@@ -189,32 +170,14 @@ function Feature({
   description: string;
 }) {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-7">
-      <div className="text-3xl">{icon}</div>
+    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]">
+      <div className="mb-4 text-3xl">{icon}</div>
 
-      <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+      <h3 className="text-lg font-semibold">{title}</h3>
 
-      <p className="mt-3 leading-7 text-gray-600">{description}</p>
-    </div>
-  );
-}
-
-function Step({
-  number,
-  title,
-  description,
-}: {
-  number: string;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="rounded-2xl border border-gray-200 p-8">
-      <div className="text-sm font-semibold text-gray-400">{number}</div>
-
-      <h3 className="mt-5 text-xl font-semibold">{title}</h3>
-
-      <p className="mt-3 leading-7 text-gray-600">{description}</p>
+      <p className="mt-2 text-sm leading-6 text-slate-400">
+        {description}
+      </p>
     </div>
   );
 }
